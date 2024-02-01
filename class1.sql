@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS ClassicModels;
+CREATE DATABASE `ClassicModels` DEFAULT CHARACTER SET latin1 COLLATE
+latin1_general_cs ;
+USE `ClassicModels` ;
+
+CREATE TABLE IF NOT EXISTS `ClassicModels`.`Offices` (
+`officeCode` VARCHAR(10) NOT NULL,
+`city` VARCHAR(50) NOT NULL,
+`phone` VARCHAR(50) NOT NULL,
+`addressLine1` VARCHAR(50) NOT NULL,
+`addressLine2` VARCHAR(50) NULL DEFAULT NULL,
+`state` VARCHAR(50) NULL DEFAULT NULL,
+`country` VARCHAR(50) NOT NULL,
+`postalCode` VARCHAR(15) NOT NULL,
+`territory` VARCHAR(10) NOT NULL,
+`officeLocation` POINT NOT NULL SRID 4326,
+PRIMARY KEY (`officeCode`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
