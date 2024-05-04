@@ -2,19 +2,21 @@ USE `Turtles` ;
 
 SELECT * FROM turtles.turtlegrowth ;
 
-SELECT * FROM classicmodels.offices where city = "Boston";
+SELECT * FROM turtles.turtlegrowth where Sex = "Female";
 
-SELECT * FROM classicmodels.offices where country = "USA";
+SELECT * FROM turtles.turtlegrowth where Year = 2004;
 
-SELECT * FROM classicmodels.employees;
+SELECT * FROM turtles.sexgrowthrate;
 
-SELECT * FROM classicmodels.employees where lastName = "Patterson";
+SELECT * FROM turtles.sexgrowthrate where Growth_Rate > 2.0;
 
-SELECT * FROM classicmodels.employees where email = "ykato@classicmodelcars.com";
+SELECT * FROM turtles.sexgrowthrate where Sex = "Male";
 
-SELECT * FROM employees JOIN offices
-	ON employees.officeCode = offices.officeCode;
-    
+/*
+SELECT * FROM sexgrowthrate JOIN turtleageyear
+	ON sexgrowthrate.Straightline_Carapace_Length = turtleageyear.Stranding_ID_Number;
+
+
 SELECT offices.city, employees.lastName, employees.firstName, employees.jobTitle, employees.email
 	AS jobTitle
 	FROM employees JOIN offices
@@ -32,4 +34,4 @@ SELECT offices.city, employees.jobTitle, employees.lastName, employees.firstName
 	FROM employees JOIN offices
 		ON employees.officeCode = offices.officeCode
         GROUP BY offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email;
-
+*/
