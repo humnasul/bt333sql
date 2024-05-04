@@ -32,4 +32,3 @@ SELECT offices.city, employees.jobTitle, employees.lastName, employees.firstName
 	FROM employees JOIN offices
 		ON employees.officeCode = offices.officeCode
         GROUP BY offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email;
-        

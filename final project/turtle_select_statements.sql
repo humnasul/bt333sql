@@ -1,37 +1,27 @@
 USE `Turtles` ;
 
-SELECT * FROM turtles.turtlegrowth ;
+SELECT * FROM turtles.turtlesex ;
 
-SELECT * FROM turtles.turtlegrowth where Sex = "Female";
+SELECT * FROM turtles.turtlesex where Sex = "Female";
 
-SELECT * FROM turtles.turtlegrowth where Year = 2004;
+SELECT * FROM turtles.turtlesex where Year = 2004;
 
-SELECT * FROM turtles.sexgrowthrate;
+SELECT * FROM turtles.turtlegrowthrate;
 
-SELECT * FROM turtles.sexgrowthrate where Growth_Rate > 2.0;
+SELECT * FROM turtles.turtlegrowthrate where Growth_Rate > 2.0;
 
-SELECT * FROM turtles.sexgrowthrate where Sex = "Male";
+SELECT * FROM turtles.turtlesex where Sex = "Male";
 
-/*
-SELECT * FROM sexgrowthrate JOIN turtleageyear
-	ON sexgrowthrate.Straightline_Carapace_Length = turtleageyear.Stranding_ID_Number;
+SELECT * FROM turtlegrowthrate JOIN turtlesex
+	ON turtlegrowthrate.Year = turtlesex.Year;
 
-
-SELECT offices.city, employees.lastName, employees.firstName, employees.jobTitle, employees.email
-	AS jobTitle
-	FROM employees JOIN offices
-		ON employees.officeCode = offices.officeCode
-			ORDER BY offices.city, employees.lastName;
-            
-SELECT offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email
-	FROM employees JOIN offices
-		ON employees.officeCode = offices.officeCode
-		GROUP BY offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email
-		HAVING COUNT(*) >= 2;
-
+SELECT turtlegrowthrate.Growth_Rate, turtlesex.Sex, turtleSex.Year
+	AS turtleRates
+	FROM turtlegrowthrate JOIN turtlesex
+		ON turtlegrowthrate.Year = turtlesex.Year
+			ORDER BY turtlesex.Year;
         
-SELECT offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email
-	FROM employees JOIN offices
-		ON employees.officeCode = offices.officeCode
-        GROUP BY offices.city, employees.jobTitle, employees.lastName, employees.firstName, employees.email;
-*/
+SELECT turtlegrowthrate.Stranding_ID_Number, turtlegrowthrate.Growth_Rate, turtlesex.Sex
+	FROM turtlegrowthrate JOIN turtlesex
+		ON turtlegrowthrate.Year = turtlesex.Year
+        GROUP BY turtlegrowthrate.Stranding_ID_Number, turtlegrowthrate.Growth_Rate, turtlesex.Sex
