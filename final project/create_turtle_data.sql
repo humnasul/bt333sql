@@ -10,25 +10,32 @@ DROP TABLE IF EXISTS `Turtles`.`Growth_Rate`;
 -- -----------------------------------------------------
 -- Table `ClassicModels`.`Employees`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Turtles`.`turtlegrowth` (
+CREATE TABLE IF NOT EXISTS `Turtles`.`turtleGrowth` (
   `Stranding_ID_Number` VARCHAR(50) NOT NULL,
   `Sex` VARCHAR(50) NOT NULL,
   `Straightline_Carapace_Length` DOUBLE NOT NULL,
   `Growth_Rate` DOUBLE NOT NULL,
   `Age` INT(11) NOT NULL,
   `Year` INT(11) NOT NULL,
-  PRIMARY KEY (`Year`),
-  INDEX `fk_Employees_Employees_idx` (`reportsTo` ASC),
-  INDEX `fk_Employees_Offices_idx` (`officeCode` ASC),
-  CONSTRAINT `fk_Employees_Employees`
-    FOREIGN KEY (`reportsTo`)
-    REFERENCES `ClassicModels`.`Employees` (`employeeNumber`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Employees_Offices`
-    FOREIGN KEY (`officeCode`)
-    REFERENCES `ClassicModels`.`Offices` (`officeCode`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`Year`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+
+CREATE TABLE IF NOT EXISTS `Turtles`.`sexGrowthRate` (
+  `Stranding_ID_Number` VARCHAR(50) NOT NULL,
+  `Sex` VARCHAR(50) NOT NULL,
+  `Straightline_Carapace_Length` DOUBLE NOT NULL,
+  `Growth_Rate` DOUBLE NOT NULL,
+  PRIMARY KEY (`Stranding_ID_Number`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+CREATE TABLE IF NOT EXISTS `Turtles`.`turtleAgeYear` (
+  `Stranding_ID_Number` VARCHAR(50) NOT NULL,
+  `Age` INT(11) NOT NULL,
+  `Year` INT(11) NOT NULL,
+  PRIMARY KEY (`Year`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
