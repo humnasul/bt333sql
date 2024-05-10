@@ -1,5 +1,5 @@
 # bt333sql
-Code from BT333 - Database Management - at Stevens Institute of Technology  
+Code from BT333 - Database Management - at Stevens Institute of Technology with Professor Elizabeth Gomez  
 Final Project: selecting a database online, completing research about that topic (research paper + video), and submitting some SQL files with select statements to put constraints on the data + better understand connections between variables  
 Credits to https://www.fisheries.noaa.gov/inport/item/36195 for database "Green_sea_turtle_age_growth.csv"  
 Class utilized...  
