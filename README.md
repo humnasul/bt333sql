@@ -7,4 +7,5 @@ Class utilized...
 - SQL scripting
 - creating dynamic and static models of data
 - excel proficiency
-- research in depth for a paper describing significance of research and data  
+- research in depth for a paper describing significance of research and data
+Receieved 100 on final project + an A as the final grade in the class!
